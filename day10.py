@@ -4,7 +4,6 @@ with open('day10.dat') as f:
     for line in f.read().splitlines():
         numbers.append(int(line))
 
-
 numbers.append(max(numbers)+3)
 numbers.sort()
 
