@@ -37,20 +37,3 @@ for tt in range(1024):
 print("max")
 print(time.time() - t)
 print("")
-
-
-#lennard
-t = time.time()
-
-import numpy as np
-lines = open('day5_input').read().splitlines()
-data = np.array(lines, dtype='c')
-row = ((data[:,:7] == b'B') * 2**np.arange(7)[::-1]).sum(axis=1)
-col = ((data[:,7:] == b'R') * 2**np.arange(3)[::-1]).sum(axis=1)
-seat = np.sort(row*8 + col)
-idx = np.where(np.diff(seat) == 2)
-print(seat.max(), seat[idx] + 1)
-
-print("lennard")
-print(time.time() - t)
-print("")
