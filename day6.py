@@ -43,20 +43,3 @@ print(result)
 print("max")
 print(time.time() - t)
 print("")
-
-
-#lennard
-import functools
-t = time.time()
-print(sum(
-    len(set(group.replace('\n','')))
-    for group in open('day6_input').read().split('\n\n')
-    ))
-print(sum(
-    len(functools.reduce(lambda a, b: set(a) & set(b), group))
-    for group in map(str.splitlines, open('day6_input').read().split('\n\n'))
-    ))
-
-print("lennard")
-print(time.time() - t)
-print("")
